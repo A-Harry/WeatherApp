@@ -1,6 +1,4 @@
-body{
-    height: 100vh;
-}
+
 .weather-page{
     display: flex;
     justify-content: center;
