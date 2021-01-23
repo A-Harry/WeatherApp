@@ -1,24 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <div class="weather-container">
-        <div class="search">
-            <input type="search" name="" id="">
-            <button>
-                <object data="./img/search-icon.svg#Icons" type="image/svg+xml"></object>
-            </button>
+    <div class="weather-page" id="weather">
+        <div class="container">
+            <div class="search">
+                <input type="search" id="search-box" placeholder="Search">
+                <button id="search-btn">
+                    <object data="./img/search-icon.svg#Icons" type="image/svg+xml"></object>
+                </button>
+            </div>
+            <div class="weather-details loading">
+                <h2 id="city">Weather in </h2>
+                <span class="temp-icon">
+                    <h1 id="temp">-8°C</h1>
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="description" srcset="">
+                    <div id="description"></div>
+                </span>
+                <div id="wind-speed"></div>
+                <div id="humidity"></div>
+            </div>
+            <!--details END-->
         </div>
-        <h2 id="city">Weather in</h2>
-        <h1 id= "temp">-8°C</h1>
-        <div id="description"></div>
-        <div id="wind-speed"></div>
+        <!--container END-->
 
     </div>
+    <!--Weather END-->
     <script src="./js/script.js"></script>
 </body>
+
 </html>

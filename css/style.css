@@ -1,11 +1,69 @@
-svg {
-    width: 70px;
-    height: 70px;
-    fill: antiquewhite;
+body{
+    height: 100vh;
+}
+.weather-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
 }
 
+.weather-details.loading{
+    visibility: hidden;
+    max-height: 10vh;
+    position: relative;
+}
+
+.weather-details.loading::after{
+    visibility: visible;
+    content: "Check the weather for a city";
+    position:absolute;
+    top: 1rem;
+    left: 1rem;
+}
+
+#weather{
+    background: url("http://source.unsplash.com/1600x900/daily");
+}
+
+.temp-icon{
+    display:flex;
+    align-items: center;
+}
+
+.container {
+    width: 450px;
+    padding: 2rem;
+    background-color: #131010eb;
+    color: white;
+    border-radius: 20px;
+    font-family: sans-serif;
+}
+
+.search {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+input#search-box {
+    border-radius: 30px;
+    border-style: none;
+    outline: none;
+    width: calc(100% - 100px);
+    padding: 12px 16px;
+    color: #bfbfbf;
+    background-color: #1f1f1f;
+}
 button{
     border-radius: 50%;
-    background-color: aliceblue;
+    background-color: #81d9de;
+    box-shadow: 0px 4px 5px 0px #51b9be;
+    border-style: none;
+    margin: 0.8rem;
 }
 
+#wind-speed, #humidity{  
+    font-size: 1.2rem;
+}
