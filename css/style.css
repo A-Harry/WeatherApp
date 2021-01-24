@@ -1,4 +1,6 @@
-
+body{
+    margin: 0;
+}
 .weather-page{
     display: flex;
     justify-content: center;
@@ -53,6 +55,7 @@ input#search-box {
     padding: 12px 16px;
     color: #bfbfbf;
     background-color: #1f1f1f;
+    font-size: 120%;
 }
 button{
     border-radius: 50%;
