@@ -11,6 +11,17 @@ let weather = {
                 this.displayWeather(data);
             })
     },
+    switchUnits: function(){
+        const temp = document.querySelector("#temp").textContent.split('')
+        if (weather.units != "metric"){
+            weather.units = "metric";
+
+            return this.search();
+        }
+        weather.units = "imperial";
+        return this.search();
+
+    },
     displayWeather: function (data) {
         console.log(data);
         const city = data.name
@@ -21,9 +32,15 @@ let weather = {
         const icon = data.weather[0].icon;
 
         document.getElementById("city").innerHTML = `Weather in ${city}`;
-        document.getElementById("temp").innerHTML = temp + "°C";
+        if(this.units == "metric"){
+            document.getElementById("temp").innerHTML = temp + "°C";
+            document.getElementById("wind-speed").innerHTML = ` Wind speed: ${windspeed} km / h `;
+
+        }else{
+            document.getElementById("temp").innerHTML = temp + "°F";
+            document.getElementById("wind-speed").innerHTML = ` Wind speed: ${windspeed} mi / h `;
+        }
         document.getElementById("description").innerHTML = `<h3> ${description} </h3>`;
-        document.getElementById("wind-speed").innerHTML = ` Wind speed: ${windspeed} km/h `;
         document.querySelector("#humidity").innerHTML = ` humidity: ${humidity}% `;
         document.querySelector("img").src = `https://openweathermap.org/img/wn/${icon}@2x.png`
         document.querySelector(".weather-details").classList.remove("loading"); 
@@ -45,4 +62,8 @@ document.querySelector("#search-box")
 document.querySelector("#search-btn")
     .addEventListener("click", () =>{
         weather.search();
-    })
+    });
+
+document.querySelector("#temp").addEventListener("click",function () {
+    weather.switchUnits();
+})
