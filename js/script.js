@@ -25,7 +25,7 @@ let weather = {
         document.getElementById("description").innerHTML = `<h3> ${description} </h3>`;
         document.getElementById("wind-speed").innerHTML = ` Wind speed: ${windspeed} km/h `;
         document.querySelector("#humidity").innerHTML = ` humidity: ${humidity}% `;
-        document.querySelector("img").src = `http://openweathermap.org/img/wn/${icon}@2x.png`
+        document.querySelector("img").src = `https://openweathermap.org/img/wn/${icon}@2x.png`
         document.querySelector(".weather-details").classList.remove("loading"); 
         document.querySelector("#weather").style.background = `url(https://source.unsplash.com/featured/?${city})`
     },
